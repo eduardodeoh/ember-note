@@ -2,13 +2,15 @@
   <div class="col-md-3">
     <div>Notebooks</div>
     <div>
-      title: {{input value=title}} <button {{action: 'addNotebook'}} >Add</button>
+      title: {{input value=title}} <button {{action 'addNotebook'}} >Add</button>
     </div>
     <div>
       <ul>
         {{#each model as |notebook|}}
           {{#link-to 'notebooks.notes' notebook.id}}
-          <li>{{notebook.title}}</li>
+          <li>
+            {{notebook.title}}
+          </li>
           {{/link-to}}
         {{else}}
           <div>No notebooks found</div>
